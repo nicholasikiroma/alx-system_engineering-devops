@@ -1,0 +1,2 @@
+#!/bin/task
+greo -c -i "bin" /etc/passwd
