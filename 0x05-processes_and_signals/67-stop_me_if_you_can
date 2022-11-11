@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Terminates program without kill or killall commands
+
+pkill -15 -f "7-highlander"
