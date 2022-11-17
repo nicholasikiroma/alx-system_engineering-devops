@@ -1,1 +1,4 @@
 #!/usr/bin/env bash
+# Bash script that prints all listening ports
+
+sudo netstat -ltup
