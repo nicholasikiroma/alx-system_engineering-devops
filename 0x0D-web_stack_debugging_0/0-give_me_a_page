@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bug fix for Docker container running Apache
+
+/etc/init.d/apache2 start
