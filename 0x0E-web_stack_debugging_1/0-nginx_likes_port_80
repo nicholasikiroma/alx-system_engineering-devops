@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Using your debugging skills, find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80.
+# script that automates nginx server to run at port 80
+sed -i s/8080/80/ /etc/nginx/sites-enabled/default
+service nginx restart
