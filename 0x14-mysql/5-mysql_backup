@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# backup sql databases and zips it to .tar.gz archive
+
+mysqldump -uroot -p"$1"  --all-databases > backup.sql
+now=$(date +"%m-%d-%Y")
+file="$now".tar.gz
+tar -zcvf "$file" backup.sql
