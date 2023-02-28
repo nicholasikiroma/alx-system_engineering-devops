@@ -10,7 +10,7 @@ import requests
 def number_of_subscribers(subreddit):
     """Returns total no of subscribers"""
     try:
-        url = f'https://www.reddit.com/r/{subreddit}/about.json'
+        url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
         req = requests.get(url, headers={'User-Agent': 'Python/requests'})
         subreddit_data = req.json()
         no_subs = subreddit_data.get('data', {}).get('subscribers', 0)
