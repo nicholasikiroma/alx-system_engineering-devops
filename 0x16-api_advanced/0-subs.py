@@ -7,12 +7,10 @@ def number_of_subscribers(subreddit):
     """Returns total no of subscribers"""
     try:
         url = f'https://www.reddit.com/r/{subreddit}/about.json'
-        req = requests.get(url)
+        req = requests.get(url, headers={'User-Agent': 'Python/requests'})
         subreddit_data = req.json()
-        no_subs = subreddit_data.get('data').get('subscribers')
-        if no_subs is None:
-            return 0
+        no_subs = subreddit_data.get('data', {}).get('subscribers', 0)
         return no_subs
 
-    except Exception as err:
-        print(f"Error: {err}")
+    except Exception:
+        return 0
