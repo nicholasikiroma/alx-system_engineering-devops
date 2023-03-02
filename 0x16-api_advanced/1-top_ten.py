@@ -10,11 +10,9 @@ import requests
 
 def top_ten(subreddit):
     """Returns top 10 posts"""
-    timeframe = 'year'
-    limit = '10'
     try:
-        url = 'https://www.reddit.com/r/{}/top.json?limit={}&t={}'.format(
-            subreddit, limit, timeframe)
+        url = 'https://www.reddit.com/r/{}/hot.json?'.format(
+            subreddit)
         req = requests.get(url, headers={'User-Agent': 'Python/requests'})
         subreddit_data = req.json()
         num = 0
