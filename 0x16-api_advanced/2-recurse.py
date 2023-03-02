@@ -15,7 +15,9 @@ def recurse(subreddit, hot_list=[], after=None):
     url = 'https://www.reddit.com/r/{}/hot.json'.format(
         subreddit)
     req = requests.get(
-        url, headers={'User-Agent': 'Python/requests'}, data=payload)
+        url, headers={'User-Agent': 'Python/requests'}, params=payload,
+        allow_redirects=False)
+
     try:
         subreddit_data = req.json()
         posts = subreddit_data.get('data', {}).get('children', None)
